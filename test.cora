@@ -1,0 +1,9 @@
+(import ["server"])
+
+(server/make
+	(route "/" handle-root)
+	(route "/api" (lambda [ctx]
+		(if some-condition
+			(404)
+			(api-call ctx))))
+	)
